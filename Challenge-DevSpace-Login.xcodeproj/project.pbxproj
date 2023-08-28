@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2A094352A9D17CA00EA2B46 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A094342A9D17CA00EA2B46 /* LoginViewController.swift */; };
+		E2A094372A9D17D000EA2B46 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A094362A9D17D000EA2B46 /* LoginView.swift */; };
 		E2C90D962A9A3F37004CE030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D952A9A3F37004CE030 /* AppDelegate.swift */; };
 		E2C90D982A9A3F37004CE030 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D972A9A3F37004CE030 /* SceneDelegate.swift */; };
 		E2C90D9A2A9A3F37004CE030 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D992A9A3F37004CE030 /* HomeViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2A094342A9D17CA00EA2B46 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E2A094362A9D17D000EA2B46 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E2C90D922A9A3F37004CE030 /* Challenge-DevSpace-Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge-DevSpace-Login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C90D952A9A3F37004CE030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C90D972A9A3F37004CE030 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2A094332A9D17BE00EA2B46 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E2A094342A9D17CA00EA2B46 /* LoginViewController.swift */,
+				E2A094362A9D17D000EA2B46 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		E2C90D892A9A3F37004CE030 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 		E2C90D942A9A3F37004CE030 /* Challenge-DevSpace-Login */ = {
 			isa = PBXGroup;
 			children = (
+				E2A094332A9D17BE00EA2B46 /* Login */,
 				E2C90DA92A9A4046004CE030 /* Home */,
 				E2C90DAD2A9A45D9004CE030 /* Present */,
 				E2C90DAA2A9A4083004CE030 /* Resouces */,
@@ -167,11 +181,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A094352A9D17CA00EA2B46 /* LoginViewController.swift in Sources */,
 				E2C90D9A2A9A3F37004CE030 /* HomeViewController.swift in Sources */,
 				E2C90DAC2A9A43E2004CE030 /* HomeView.swift in Sources */,
 				E2C90DAF2A9A45F0004CE030 /* PresentViewController.swift in Sources */,
 				E2C90D962A9A3F37004CE030 /* AppDelegate.swift in Sources */,
 				E2C90DB12A9A45F6004CE030 /* PresentView.swift in Sources */,
+				E2A094372A9D17D000EA2B46 /* LoginView.swift in Sources */,
 				E2C90D982A9A3F37004CE030 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

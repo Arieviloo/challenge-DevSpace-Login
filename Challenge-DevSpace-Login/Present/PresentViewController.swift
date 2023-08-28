@@ -25,6 +25,8 @@ class PresentViewController: UIViewController {
 extension PresentViewController: PresentViewProtocol {
     func tappedNextScreen() {
         print("\(#function) bumba")
+        let loginVC = LoginViewController()
+        present(loginVC, animated: true)
     }
     
     
