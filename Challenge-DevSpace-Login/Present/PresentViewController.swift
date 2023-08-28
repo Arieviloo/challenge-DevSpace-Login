@@ -18,5 +18,14 @@ class PresentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentView?.delegate(delegate: self)
     }
+}
+
+extension PresentViewController: PresentViewProtocol {
+    func tappedNextScreen() {
+        print("\(#function) bumba")
+    }
+    
+    
 }

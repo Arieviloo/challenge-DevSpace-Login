@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol PresentViewProtocol:NSObject {
+    func tappedNextScreen()
+}
+
 class PresentView: UIView {
+    
+    private var delegate: PresentViewProtocol?
+    public func delegate(delegate: PresentViewProtocol) {
+        self.delegate = delegate
+    }
     
     lazy var titleLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -35,6 +44,7 @@ class PresentView: UIView {
         $0.layer.borderWidth = 0
         $0.backgroundColor = .purple
         $0.setImage(UIImage(systemName: "arrowshape.forward.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
+        $0.addTarget(self, action: #selector(tappedNextScreen), for: .touchUpInside)
         return $0
         
     }(UIButton(type: .system))
@@ -54,6 +64,10 @@ class PresentView: UIView {
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(nextPageButton)
+    }
+    
+    @objc func tappedNextScreen() {
+        self.delegate?.tappedNextScreen()
     }
     
     private func configConstraints() {
