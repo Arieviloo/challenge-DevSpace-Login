@@ -9,19 +9,25 @@
 /* Begin PBXBuildFile section */
 		E2C90D962A9A3F37004CE030 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D952A9A3F37004CE030 /* AppDelegate.swift */; };
 		E2C90D982A9A3F37004CE030 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D972A9A3F37004CE030 /* SceneDelegate.swift */; };
-		E2C90D9A2A9A3F37004CE030 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D992A9A3F37004CE030 /* ViewController.swift */; };
+		E2C90D9A2A9A3F37004CE030 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90D992A9A3F37004CE030 /* HomeViewController.swift */; };
 		E2C90D9F2A9A3F38004CE030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C90D9E2A9A3F38004CE030 /* Assets.xcassets */; };
 		E2C90DA22A9A3F38004CE030 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C90DA02A9A3F38004CE030 /* LaunchScreen.storyboard */; };
+		E2C90DAC2A9A43E2004CE030 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90DAB2A9A43E2004CE030 /* HomeView.swift */; };
+		E2C90DAF2A9A45F0004CE030 /* PresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90DAE2A9A45F0004CE030 /* PresentViewController.swift */; };
+		E2C90DB12A9A45F6004CE030 /* PresentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C90DB02A9A45F6004CE030 /* PresentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2C90D922A9A3F37004CE030 /* Challenge-DevSpace-Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Challenge-DevSpace-Login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C90D952A9A3F37004CE030 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C90D972A9A3F37004CE030 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2C90D992A9A3F37004CE030 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2C90D992A9A3F37004CE030 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E2C90D9E2A9A3F38004CE030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2C90DA12A9A3F38004CE030 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C90DA32A9A3F38004CE030 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C90DAB2A9A43E2004CE030 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E2C90DAE2A9A45F0004CE030 /* PresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentViewController.swift; sourceTree = "<group>"; };
+		E2C90DB02A9A45F6004CE030 /* PresentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		E2C90D942A9A3F37004CE030 /* Challenge-DevSpace-Login */ = {
 			isa = PBXGroup;
 			children = (
-				E2C90D952A9A3F37004CE030 /* AppDelegate.swift */,
-				E2C90D972A9A3F37004CE030 /* SceneDelegate.swift */,
-				E2C90D992A9A3F37004CE030 /* ViewController.swift */,
-				E2C90D9E2A9A3F38004CE030 /* Assets.xcassets */,
-				E2C90DA02A9A3F38004CE030 /* LaunchScreen.storyboard */,
+				E2C90DA92A9A4046004CE030 /* Home */,
+				E2C90DAD2A9A45D9004CE030 /* Present */,
+				E2C90DAA2A9A4083004CE030 /* Resouces */,
 				E2C90DA32A9A3F38004CE030 /* Info.plist */,
 			);
 			path = "Challenge-DevSpace-Login";
+			sourceTree = "<group>";
+		};
+		E2C90DA92A9A4046004CE030 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E2C90D992A9A3F37004CE030 /* HomeViewController.swift */,
+				E2C90DAB2A9A43E2004CE030 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E2C90DAA2A9A4083004CE030 /* Resouces */ = {
+			isa = PBXGroup;
+			children = (
+				E2C90D9E2A9A3F38004CE030 /* Assets.xcassets */,
+				E2C90DA02A9A3F38004CE030 /* LaunchScreen.storyboard */,
+				E2C90D952A9A3F37004CE030 /* AppDelegate.swift */,
+				E2C90D972A9A3F37004CE030 /* SceneDelegate.swift */,
+			);
+			path = Resouces;
+			sourceTree = "<group>";
+		};
+		E2C90DAD2A9A45D9004CE030 /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				E2C90DAE2A9A45F0004CE030 /* PresentViewController.swift */,
+				E2C90DB02A9A45F6004CE030 /* PresentView.swift */,
+			);
+			path = Present;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C90D9A2A9A3F37004CE030 /* ViewController.swift in Sources */,
+				E2C90D9A2A9A3F37004CE030 /* HomeViewController.swift in Sources */,
+				E2C90DAC2A9A43E2004CE030 /* HomeView.swift in Sources */,
+				E2C90DAF2A9A45F0004CE030 /* PresentViewController.swift in Sources */,
 				E2C90D962A9A3F37004CE030 /* AppDelegate.swift in Sources */,
+				E2C90DB12A9A45F6004CE030 /* PresentView.swift in Sources */,
 				E2C90D982A9A3F37004CE030 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
