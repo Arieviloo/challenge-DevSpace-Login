@@ -33,8 +33,17 @@ class LoginView: UIView {
     
     lazy var fullNameLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "Full Name"
+        let text = "full varias outros coisas no meio name"
+        $0.text = text
+        let underl = NSMutableAttributedString(string: text)
+        let range1 = (text as NSString).range(of: "full")
+        let range2 = (text as NSString).range(of: "name")
+        underl.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red , range: range1)
+        underl.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue , range: range2)
         $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        $0.attributedText = underl
+        $0.isUserInteractionEnabled = true
+        //        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(aquideubom)))
         return $0
     }(UILabel())
     
@@ -74,6 +83,7 @@ class LoginView: UIView {
     lazy var passwordLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "Password"
+        $0.isUserInteractionEnabled = true
         $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return $0
     }(UILabel())
@@ -92,6 +102,28 @@ class LoginView: UIView {
         return $0
     }(UITextField())
     
+    lazy var termsCheckButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setImage(UIImage(systemName: "square"), for: .normal)
+        $0.setImage(UIImage(systemName: "checkmark.square.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal), for: .selected)
+        $0.addTarget(self, action: #selector(tappedCheckButton), for: .touchUpInside)
+        return $0
+    }(UIButton())
+    
+    lazy var termsLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        let text = "I agree the Terms & Conditions and Privacy Policy"
+        $0.text = text
+        $0.numberOfLines = 0
+        return $0
+    }(UILabel())
+    
+    
+    var isSelected = false
+    @objc func tappedCheckButton() {
+        isSelected.toggle()
+        termsCheckButton.isSelected = isSelected
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -114,6 +146,8 @@ class LoginView: UIView {
         backgroundView.addSubview(emailTextField)
         backgroundView.addSubview(passwordLabel)
         backgroundView.addSubview(passwordTextField)
+        backgroundView.addSubview(termsCheckButton)
+        backgroundView.addSubview(termsLabel)
     }
     
     private func configConstraints() {
@@ -157,7 +191,15 @@ class LoginView: UIView {
             passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 5),
             passwordTextField.leadingAnchor.constraint(equalTo: fullNameTextField.leadingAnchor),
             passwordTextField.trailingAnchor.constraint(equalTo: fullNameTextField.trailingAnchor),
-            passwordTextField.heightAnchor.constraint(equalTo: fullNameTextField.heightAnchor)
+            passwordTextField.heightAnchor.constraint(equalTo: fullNameTextField.heightAnchor),
+            
+            termsCheckButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            termsCheckButton.leadingAnchor.constraint(equalTo: passwordTextField.leadingAnchor),
+            termsCheckButton.trailingAnchor.constraint(equalTo: termsLabel.leadingAnchor, constant: -5),
+            
+            termsLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
+            termsLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor)
+            
             
         ])
     }
