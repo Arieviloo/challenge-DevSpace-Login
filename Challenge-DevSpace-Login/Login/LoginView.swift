@@ -33,17 +33,8 @@ class LoginView: UIView {
     
     lazy var fullNameLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        let text = "full varias outros coisas no meio name"
-        $0.text = text
-        let underl = NSMutableAttributedString(string: text)
-        let range1 = (text as NSString).range(of: "full")
-        let range2 = (text as NSString).range(of: "name")
-        underl.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red , range: range1)
-        underl.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue , range: range2)
+        $0.text = "full name"
         $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        $0.attributedText = underl
-        $0.isUserInteractionEnabled = true
-        //        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(aquideubom)))
         return $0
     }(UILabel())
     
@@ -114,6 +105,14 @@ class LoginView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         let text = "I agree the Terms & Conditions and Privacy Policy"
         $0.text = text
+        let mutableText = NSMutableAttributedString(string: text)
+        let termsString = (text as NSString).range(of: "Terms & Conditions")
+        let privacyString = (text as NSString).range(of: "Privacy Policy")
+        mutableText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.purple, range: termsString)
+        mutableText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.purple, range: privacyString)
+        $0.attributedText = mutableText
+        $0.isUserInteractionEnabled = true
+        //        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(aquideubom)))
         $0.numberOfLines = 0
         return $0
     }(UILabel())
