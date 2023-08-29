@@ -112,8 +112,9 @@ class LoginView: UIView {
         mutableText.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.purple, range: privacyString)
         $0.attributedText = mutableText
         $0.isUserInteractionEnabled = true
-        //        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(aquideubom)))
+        $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tappedTextTerms)))
         $0.numberOfLines = 0
+        $0.font = UIFont.systemFont(ofSize: 14)
         return $0
     }(UILabel())
     
@@ -122,6 +123,20 @@ class LoginView: UIView {
     @objc func tappedCheckButton() {
         isSelected.toggle()
         termsCheckButton.isSelected = isSelected
+    }
+    
+    @objc func tappedTextTerms(gesture: UITapGestureRecognizer) {
+        guard let text = termsLabel.text else { return }
+        let termsRange = (text as NSString).range(of:"Terms & Conditions")
+        let privacyRange = (text as NSString).range(of:"Privacy Policy")
+        
+        if gesture.didTapAttributedTextInLabel(label: termsLabel, inRange: termsRange) {
+            print("Tapped terms")
+        } else if gesture.didTapAttributedTextInLabel(label: termsLabel, inRange: privacyRange) {
+            print("Tapped privacy")
+        } else {
+            print("Tapped none")
+        }
     }
     
     override init(frame: CGRect) {
@@ -197,7 +212,8 @@ class LoginView: UIView {
             termsCheckButton.trailingAnchor.constraint(equalTo: termsLabel.leadingAnchor, constant: -5),
             
             termsLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
-            termsLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor)
+            termsLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
+            termsLabel.centerYAnchor.constraint(equalTo: termsCheckButton.centerYAnchor)
             
             
         ])
