@@ -119,6 +119,17 @@ class LoginView: UIView {
     }(UILabel())
     
     
+    lazy var createButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Create", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 8
+        $0.backgroundColor = UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0)
+        
+        return $0
+    }(UIButton(type: .system))
+    
     var isSelected = false
     @objc func tappedCheckButton() {
         isSelected.toggle()
@@ -162,6 +173,7 @@ class LoginView: UIView {
         backgroundView.addSubview(passwordTextField)
         backgroundView.addSubview(termsCheckButton)
         backgroundView.addSubview(termsLabel)
+        backgroundView.addSubview(createButton)
     }
     
     private func configConstraints() {
@@ -213,7 +225,12 @@ class LoginView: UIView {
             
             termsLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             termsLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
-            termsLabel.centerYAnchor.constraint(equalTo: termsCheckButton.centerYAnchor)
+            termsLabel.centerYAnchor.constraint(equalTo: termsCheckButton.centerYAnchor),
+            
+            createButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 20),
+            createButton.leadingAnchor.constraint(equalTo: fullNameTextField.leadingAnchor),
+            createButton.trailingAnchor.constraint(equalTo: fullNameTextField.trailingAnchor),
+            createButton.heightAnchor.constraint(equalToConstant: 40)
             
             
         ])
