@@ -119,6 +119,40 @@ class LoginView: UIView {
     }(UILabel())
     
     
+    lazy var createButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Create Account", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 8
+        $0.backgroundColor = UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0)
+        return $0
+    }(UIButton(type: .system))
+    
+    lazy var signGoogleButton: UIButton = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 8
+        $0.layer.borderWidth = 2
+        $0.setTitleColor(UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0), for: .normal)
+        return $0
+    }(UIButton(type: .system))
+    
+    lazy var logoGoogleImage: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.image = UIImage(named: "google")
+        $0.contentMode = .scaleAspectFit
+        return $0
+    }(UIImageView())
+    
+    lazy var signGoogleLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.text = "Sign up with Google"
+        $0.isUserInteractionEnabled = true
+        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        return $0
+    }(UILabel())
+    
     var isSelected = false
     @objc func tappedCheckButton() {
         isSelected.toggle()
@@ -162,6 +196,10 @@ class LoginView: UIView {
         backgroundView.addSubview(passwordTextField)
         backgroundView.addSubview(termsCheckButton)
         backgroundView.addSubview(termsLabel)
+        backgroundView.addSubview(createButton)
+        backgroundView.addSubview(signGoogleButton)
+        signGoogleButton.addSubview(logoGoogleImage)
+        signGoogleButton.addSubview(signGoogleLabel)
     }
     
     private func configConstraints() {
@@ -213,8 +251,27 @@ class LoginView: UIView {
             
             termsLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             termsLabel.trailingAnchor.constraint(equalTo: passwordTextField.trailingAnchor),
-            termsLabel.centerYAnchor.constraint(equalTo: termsCheckButton.centerYAnchor)
+            termsLabel.centerYAnchor.constraint(equalTo: termsCheckButton.centerYAnchor),
             
+            createButton.topAnchor.constraint(equalTo: termsLabel.bottomAnchor, constant: 20),
+            createButton.leadingAnchor.constraint(equalTo: fullNameTextField.leadingAnchor),
+            createButton.trailingAnchor.constraint(equalTo: fullNameTextField.trailingAnchor),
+            createButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            signGoogleButton.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 20),
+            signGoogleButton.leadingAnchor.constraint(equalTo: createButton.leadingAnchor),
+            signGoogleButton.trailingAnchor.constraint(equalTo: createButton.trailingAnchor),
+            signGoogleButton.heightAnchor.constraint(equalTo: createButton.heightAnchor),
+            
+            signGoogleLabel.centerXAnchor.constraint(equalTo: signGoogleButton.centerXAnchor),
+            signGoogleLabel.centerYAnchor.constraint(equalTo: signGoogleButton.centerYAnchor),
+            
+            logoGoogleImage.centerYAnchor.constraint(equalTo: signGoogleButton.centerYAnchor),
+            logoGoogleImage.trailingAnchor.constraint(equalTo: signGoogleLabel.leadingAnchor, constant: -5),
+            logoGoogleImage.heightAnchor.constraint(equalToConstant: 20),
+            logoGoogleImage.widthAnchor.constraint(equalToConstant: 20)
+            
+           
             
         ])
     }
