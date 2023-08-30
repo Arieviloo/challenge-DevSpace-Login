@@ -7,10 +7,11 @@
 
 import UIKit
 
+
+
 class HomeViewController: UIViewController {
     
     private var homeView: HomeView?
-    let presentVC: PresentViewController = PresentViewController()
     
     override func loadView() {
         homeView = HomeView()
@@ -19,16 +20,17 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = UIColor.primaryColor
         
-        if let sheet = presentVC.sheetPresentationController {
-            sheet.detents = [.medium()]
-            sheet.preferredCornerRadius = 30
-        }
-        
-        present(presentVC, animated: true)
+        homeView?.delegate(delegate: self)
     }
+}
 
-
+extension HomeViewController: HomeViewProtocol {
+    func tappedNextScreen() {
+        let loginVC = LoginViewController()
+        present(loginVC, animated: true)
+    }
+    
 }
 
