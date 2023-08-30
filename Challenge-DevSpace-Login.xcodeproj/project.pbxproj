@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20BE1F92A9F7D240056BAF6 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20BE1F82A9F7D240056BAF6 /* UIColor + Extension.swift */; };
 		E22DDD4C2A9E8A5E0094AE1E /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DDD4B2A9E8A5E0094AE1E /* UITapGestureRecognizer.swift */; };
 		E2A094352A9D17CA00EA2B46 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A094342A9D17CA00EA2B46 /* LoginViewController.swift */; };
 		E2A094372A9D17D000EA2B46 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A094362A9D17D000EA2B46 /* LoginView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E20BE1F82A9F7D240056BAF6 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		E22DDD4B2A9E8A5E0094AE1E /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
 		E2A094342A9D17CA00EA2B46 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E2A094362A9D17D000EA2B46 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				E22DDD4B2A9E8A5E0094AE1E /* UITapGestureRecognizer.swift */,
+				E20BE1F82A9F7D240056BAF6 /* UIColor + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				E2C90DB12A9A45F6004CE030 /* PresentView.swift in Sources */,
 				E2A094372A9D17D000EA2B46 /* LoginView.swift in Sources */,
 				E2C90D982A9A3F37004CE030 /* SceneDelegate.swift in Sources */,
+				E20BE1F92A9F7D240056BAF6 /* UIColor + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

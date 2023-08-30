@@ -27,20 +27,20 @@ class LoginView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "Sign Up"
         $0.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        $0.textColor = UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0)
+        $0.textColor = UIColor.primaryColor
         return $0
     }(UILabel())
     
     lazy var fullNameLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "full name"
+        $0.text = "Full name"
         $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         return $0
     }(UILabel())
     
     lazy var fullNameTextField: UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 253/255, alpha: 1.0)
+        $0.backgroundColor = UIColor.secondaryColor
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
         $0.placeholder = "Peter Parker"
@@ -60,7 +60,7 @@ class LoginView: UIView {
     
     lazy var emailTextField: UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 253/255, alpha: 1.0)
+        $0.backgroundColor = UIColor.secondaryColor
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
         $0.placeholder = "peterparker@gmail.com"
@@ -81,7 +81,7 @@ class LoginView: UIView {
     
     lazy var passwordTextField: UITextField = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 253/255, alpha: 1.0)
+        $0.backgroundColor = UIColor.secondaryColor
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
         $0.placeholder = "*******"
@@ -96,7 +96,7 @@ class LoginView: UIView {
     lazy var termsCheckButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setImage(UIImage(systemName: "square"), for: .normal)
-        $0.setImage(UIImage(systemName: "checkmark.square.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal), for: .selected)
+        $0.setImage(UIImage(systemName: "checkmark.square.fill")?.withTintColor(UIColor.primaryColor, renderingMode: .alwaysOriginal), for: .selected)
         $0.addTarget(self, action: #selector(tappedCheckButton), for: .touchUpInside)
         return $0
     }(UIButton())
@@ -125,7 +125,7 @@ class LoginView: UIView {
         $0.setTitleColor(.white, for: .normal)
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
-        $0.backgroundColor = UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0)
+        $0.backgroundColor = UIColor.primaryColor
         return $0
     }(UIButton(type: .system))
     
@@ -134,7 +134,8 @@ class LoginView: UIView {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
         $0.layer.borderWidth = 2
-        $0.setTitleColor(UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0), for: .normal)
+        $0.layer.borderColor = UIColor.primaryColor.cgColor
+        $0.setTitleColor(UIColor.primaryColor, for: .normal)
         return $0
     }(UIButton(type: .system))
     
@@ -150,6 +151,29 @@ class LoginView: UIView {
         $0.text = "Sign up with Google"
         $0.isUserInteractionEnabled = true
         $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        $0.textColor = UIColor.primaryColor
+        return $0
+    }(UILabel())
+    
+    lazy var lineLeftView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor.secondaryColor.cgColor
+        return $0
+    }(UIView())
+    
+    lazy var lineRighttView: UIView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.borderWidth = 2
+        $0.layer.borderColor = UIColor.secondaryColor.cgColor
+        return $0
+    }(UIView())
+    
+    lazy var orLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.text = "or"
+        $0.isUserInteractionEnabled = true
+        $0.font = UIFont.systemFont(ofSize: 14)
         return $0
     }(UILabel())
     
@@ -175,7 +199,7 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(red: 50/255, green: 59/255, blue: 142/255, alpha: 1.0)
+        backgroundColor = UIColor.primaryColor
         configView()
         configConstraints()
     }
@@ -198,6 +222,9 @@ class LoginView: UIView {
         backgroundView.addSubview(termsLabel)
         backgroundView.addSubview(createButton)
         backgroundView.addSubview(signGoogleButton)
+        backgroundView.addSubview(lineLeftView)
+        backgroundView.addSubview(lineRighttView)
+        backgroundView.addSubview(orLabel)
         signGoogleButton.addSubview(logoGoogleImage)
         signGoogleButton.addSubview(signGoogleLabel)
     }
@@ -258,7 +285,20 @@ class LoginView: UIView {
             createButton.trailingAnchor.constraint(equalTo: fullNameTextField.trailingAnchor),
             createButton.heightAnchor.constraint(equalToConstant: 40),
             
-            signGoogleButton.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 20),
+            lineLeftView.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 20),
+            lineLeftView.leadingAnchor.constraint(equalTo: createButton.leadingAnchor),
+            lineLeftView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: -110/1),
+            lineLeftView.heightAnchor.constraint(equalToConstant: 2),
+            
+            orLabel.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 10),
+            orLabel.centerXAnchor.constraint(equalTo: createButton.centerXAnchor),
+            
+            lineRighttView.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 20),
+            lineRighttView.trailingAnchor.constraint(equalTo: createButton.trailingAnchor),
+            lineRighttView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 110),
+            lineRighttView.heightAnchor.constraint(equalToConstant: 2),
+            
+            signGoogleButton.topAnchor.constraint(equalTo: createButton.bottomAnchor, constant: 40),
             signGoogleButton.leadingAnchor.constraint(equalTo: createButton.leadingAnchor),
             signGoogleButton.trailingAnchor.constraint(equalTo: createButton.trailingAnchor),
             signGoogleButton.heightAnchor.constraint(equalTo: createButton.heightAnchor),
